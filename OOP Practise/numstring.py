@@ -1,14 +1,24 @@
+import logging
+
+# logging.info("You wont see this")
+# logging.warning("OH NO")
+
+logging.basicConfig(filename="numstring.log", level=logging.DEBUG)
+
 class NumString:
     def __init__(self, value):
         self.value = str(value)#
+
     
     def __str__(self):
+        #import pdb; pdb.set_trace()
         return self.value
 
     def __int__(self):
         return int(self.value)
 
     def __float__(self):
+        logging.info(float(self.value))
         return float(self.value)
 
     def __add__(self, other):
